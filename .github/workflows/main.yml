@@ -3,7 +3,9 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
+      - main
       - development
+      - release
 
 jobs:
   test:
