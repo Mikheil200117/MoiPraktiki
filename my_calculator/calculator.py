@@ -1,5 +1,5 @@
 # calculator.py
-# Оставлю комментарий4
+# Оставлю комментарий5
 class Calculator:
     def add(self, a, b):
         return a + b
