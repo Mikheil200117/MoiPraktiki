@@ -33,5 +33,5 @@ jobs:
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: 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
           publish_dir: ./docs/documentation.html
