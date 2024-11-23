@@ -22,16 +22,21 @@ jobs:
           python-version: '3.8'
 
       - name: Install dependencies
+        run: pip install -r .github/workflows/requirements.txt
+          
+      - name: install sphinx
+        run: pip install sphinx
+      - name: install mkdocs
+        run: pip install mkdocs mkdocs-material
+      - name: Generate documentation
         run: |
-          pip install sphinx sphinx-autobuild
-
-      - name: Build documentation
-        run: |
-          cd docs
-          make documentation.html
-
-      - name: Deploy documentation to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+          sphinx-build -b html .github/workflows/docs/source .github/workflows/docs/build
+  
+      - name: Deploy documentation
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: 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
-          publish_dir: ./docs/documentation.html
+          folder: .github/workflows/docs/build
+          branch: gh-pages
+          github_token: ${{ secrets.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 }}
+          
+       
