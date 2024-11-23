@@ -21,8 +21,6 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: Install dependencies
-        run: pip install -r .github/workflows/requirements.txt
           
       - name: install sphinx
         run: pip install sphinx
